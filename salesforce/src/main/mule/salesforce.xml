@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="41d891db-aa47-4dec-9eb5-ef426fb6e103" >
+		<http:listener-connection host="0.0.0.0" port="9081" />
+	</http:listener-config>
+	<flow name="salesforceFlow" doc:id="11108420-6bd2-4cbc-9a9e-adafa7dc3c52" >
+		<http:listener doc:name="Listener" doc:id="5f72601d-3991-4d6e-ad6d-af7a6c55690f" config-ref="HTTP_Listener_config" path="/api"/>
+		<logger level="INFO" doc:name="Logger" doc:id="a005f4b7-a9a8-452f-93d6-5419bd478352" message="success!"/>
+	</flow>
+</mule>
